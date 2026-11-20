@@ -209,7 +209,7 @@ class Usecase:
                 attributes={
                     "FreeFloat": ifcopenshell.util.date.datetime2ifc(data["free_float"], "IfcDuration"),
                     "TotalFloat": ifcopenshell.util.date.datetime2ifc(data["total_float"], "IfcDuration"),
-                    "IsCritical": data["total_float"].days == 0,
+                    "IsCritical": data["total_float"] <= datetime.timedelta(),
                     "EarlyStart": ifcopenshell.util.date.datetime2ifc(data["early_start"], "IfcDateTime"),
                     "EarlyFinish": ifcopenshell.util.date.datetime2ifc(data["early_finish"], "IfcDateTime"),
                     "LateStart": ifcopenshell.util.date.datetime2ifc(data["late_start"], "IfcDateTime"),
